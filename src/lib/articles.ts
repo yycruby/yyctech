@@ -9,6 +9,7 @@ interface Article {
 
 export interface ArticleWithSlug extends Article {
   slug: string
+  link: string // Add this line
 }
 
 async function importArticle(
@@ -21,6 +22,7 @@ async function importArticle(
 
   return {
     slug: articleFilename.replace(/(\/page)?\.mdx$/, ''),
+    link: `/articles/${articleFilename.replace(/(\/page)?\.mdx$/, '')}`,
     ...article,
   }
 }
