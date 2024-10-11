@@ -1,10 +1,13 @@
 'use client'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import ThemeToggle from './ThemeToggle'
+import NavItem from './NavItem/NavItem'
 
 export function Header() {
   const { resolvedTheme } = useTheme()
+  const pathname = usePathname()
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 bg-zinc-50 dark:bg-zinc-900">
@@ -19,41 +22,24 @@ export function Header() {
             </p>
           </Link>
           <div className="flex items-center justify-end gap-1 antialiased">
-            <Link href="/about">
-              <span
-                className={`text-sm font-medium hover:shadow ${resolvedTheme === 'dark' ? 'hover:bg-[#252529]' : 'hover:bg-[#f5f0f7]'} rounded-full px-4 py-3 transition-all duration-200`}
-              >
-                About
-              </span>
-            </Link>
-            <Link href="/events">
-              <span
-                className={`text-sm font-medium hover:shadow ${resolvedTheme === 'dark' ? 'hover:bg-[#252529]' : 'hover:bg-[#f5f0f7]'} rounded-full px-4 py-3 transition-all duration-200`}
-              >
-                Events
-              </span>
-            </Link>
-            <Link href="/communities">
-              <span
-                className={`text-sm font-medium hover:shadow ${resolvedTheme === 'dark' ? 'hover:bg-[#252529]' : 'hover:bg-[#f5f0f7]'} rounded-full px-4 py-3 transition-all duration-200`}
-              >
-                Communities
-              </span>
-            </Link>
-            <Link href="/newsletter">
-              <span
-                className={`text-sm font-medium hover:shadow ${resolvedTheme === 'dark' ? 'hover:bg-[#252529]' : 'hover:bg-[#f5f0f7]'} rounded-full px-4 py-3 transition-all duration-200`}
-              >
-                Join Us
-              </span>
-            </Link>
-            <Link href="/contact">
-              <span
-                className={`mr-2 text-sm font-medium hover:shadow ${resolvedTheme === 'dark' ? 'hover:bg-[#252529]' : 'hover:bg-[#f5f0f7]'} rounded-full px-4 py-3 transition-all duration-200`}
-              >
-                Contact
-              </span>
-            </Link>
+            <NavItem
+              pathname={pathname}
+              resolvedTheme={resolvedTheme}
+              path="/about"
+              text="About"
+            />
+            <NavItem
+              pathname={pathname}
+              resolvedTheme={resolvedTheme}
+              path="/newsletter"
+              text="Join Us"
+            />
+            <NavItem
+              pathname={pathname}
+              resolvedTheme={resolvedTheme}
+              path="/contact"
+              text="Contact"
+            />
             <ThemeToggle />
           </div>
         </div>

@@ -1,7 +1,9 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import { Events } from './Events'
 import Platforms from './Platforms'
+import Volunteering from './Volunteering'
 import { FaUsers } from 'react-icons/fa'
+import { FaHandHoldingHeart } from 'react-icons/fa'
 import { CgCalendarToday } from 'react-icons/cg'
 
 export function TabSection() {
@@ -34,6 +36,10 @@ export function TabSection() {
               <Tab className={tabStyle}>
                 <FaUsers className="h-5 w-5" />
                 <span>Communities</span>
+              </Tab>{' '}
+              <Tab className={tabStyle}>
+                <FaHandHoldingHeart className="h-5 w-5" />
+                <span>Volunteering</span>
               </Tab>
             </div>
           </TabList>
@@ -68,6 +74,20 @@ export function TabSection() {
               </p>
             </div>
             <Platforms />
+          </TabPanel>
+          <TabPanel className="-mx-2">
+            <div className="mb-8 mt-12 max-w-2xl px-6">
+              <h2 className="text-2xl font-bold tracking-tight text-zinc-800 sm:text-4xl dark:text-zinc-100">
+                Find Volunteer Opportunities
+              </h2>
+              <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400">
+                Show your support by volunteering! Whether you’re a seasoned pro
+                or just starting out, your skills can make a big impact. Connect
+                with others, gain experience, and help shape the future of tech
+                in our city.
+              </p>
+            </div>
+            <Volunteering />
           </TabPanel>
         </TabPanels>
       </div>
