@@ -11,7 +11,7 @@ export function Header() {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 bg-zinc-50 dark:bg-zinc-900">
-      <nav className="mx-auto max-w-[1260px] px-4">
+      <nav className="mx-auto max-w-7xl">
         <div className="flex items-center justify-between py-4">
           <Link href={'/'}>
             <p className="text-lg font-black text-red-500 antialiased dark:text-red-400">

@@ -31,32 +31,48 @@ export const metadata: Metadata = {
 
 export default function Platforms() {
   return (
-    <div className="space-y-12">
-      <ul
-        role="list"
-        className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3"
-      >
-        {platforms.map((platform) => (
-          <Card as="li" key={platform.name}>
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image
-                src={platform.logo}
-                alt=""
-                className="h-8 w-8"
-                unoptimized
-              />
+    <ul
+      role="list"
+      className="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+    >
+      {platforms.map((platform) => (
+        <Card as="li" key={platform.name} className="group">
+          {/* <div className="absolute right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 top-4 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"> */}
+          <Image
+            src={platform.logo}
+            alt=""
+            className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full opacity-0 shadow-lg shadow-zinc-800/5 transition-all duration-300 group-hover:opacity-100"
+            unoptimized
+          />
+          {/* </div> */}
+          <div className="relative h-[180px] w-full overflow-hidden rounded-md">
+            <Image
+              src={platform.image}
+              width={400}
+              height={300}
+              alt="community-image"
+              className="absolute left-0 top-0 h-full w-full object-cover opacity-70 transition-all duration-300 group-hover:opacity-[95%] dark:opacity-50"
+            />
+          </div>
+          <div className="px-4 opacity-70 group-hover:opacity-100">
+            <div className='flex w-full items-center gap-2 mt-2'>
+              <h2 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                <Card.Link href={platform.link.href}>{platform.name}</Card.Link>
+              </h2>
+              {platform.badge && (
+                <div className="rounded-md bg-[#dd514c] opacity-0 -translate-x-6 group-hover:opacity-100 group-hover:translate-x-0 font-semibold px-2 text-[0.75em] text-white transition-all duration-200 ease-in-out">
+                  {platform.badge}
+                </div>
+              )}
             </div>
-            <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={platform.link.href}>{platform.name}</Card.Link>
-            </h2>
             <Card.Description>{platform.description}</Card.Description>
             <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-red-400 dark:text-zinc-200">
               <LinkIcon className="h-6 w-6 flex-none" />
               <span className="ml-2">{platform.link.label}</span>
             </p>
-          </Card>
-        ))}
-      </ul>
-    </div>
+          </div>
+        </Card>
+      ))}
+    </ul>
   )
 }

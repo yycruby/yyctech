@@ -15,7 +15,7 @@ export function Card<T extends React.ElementType = 'div'>({
     <Component
       className={clsx(
         className,
-        'group relative flex flex-col items-start overflow-hidden rounded-xl bg-zinc-50 p-6 dark:bg-zinc-900',
+        'group relative flex flex-col items-start overflow-hidden rounded-xl bg-zinc-50 hover:bg-zinc-100 pb-4 dark:bg-zinc-900 dark:hover:bg-zinc-900 transition-all duration-300 dark:ring-1 dark:ring-zinc-900 dark:hover:ring-zinc-700',
       )}
     >
       {children}
@@ -41,7 +41,7 @@ Card.Link = function CardLink({
 }: React.ComponentPropsWithoutRef<typeof Link>) {
   return (
     <>
-      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-100 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" />
+      {/* <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-100 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" /> */}
       {/* All links are opening in new windows */}
       <Link {...props} target="_blank" rel="noopener noreferrer">
         <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />

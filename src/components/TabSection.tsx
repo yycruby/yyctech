@@ -26,7 +26,7 @@ export function TabSection() {
   return (
     <TabGroup>
       <div className="sticky top-[64px] z-50 w-full border-b border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900">
-        <div className="mx-auto max-w-[1260px] px-4">
+        <div className="mx-auto max-w-7xl">
           <TabList className="flex pt-1">
             <div className="flex flex-row gap-8">
               <Tab className={tabStyle}>
@@ -45,10 +45,10 @@ export function TabSection() {
           </TabList>
         </div>
       </div>
-      <div className="mx-auto max-w-[1260px]">
+      <div className="mx-auto max-w-7xl">
         <TabPanels>
           <TabPanel className="-mx-2">
-            <div className="mb-8 mt-12 max-w-2xl px-6">
+            <div className="mb-8 mt-12 max-w-2xl px-3">
               <h2 className="text-2xl font-bold tracking-tight text-zinc-800 sm:text-4xl dark:text-zinc-100">
                 Attend an Event
               </h2>
@@ -62,7 +62,7 @@ export function TabSection() {
             <Events />
           </TabPanel>
           <TabPanel className="-mx-2">
-            <div className="mb-8 mt-12 max-w-2xl px-6">
+            <div className="mb-8 mt-12 max-w-2xl px-3">
               <h2 className="text-2xl font-bold tracking-tight text-zinc-800 sm:text-4xl dark:text-zinc-100">
                 Join an Online Community
               </h2>
@@ -76,7 +76,7 @@ export function TabSection() {
             <Platforms />
           </TabPanel>
           <TabPanel className="-mx-2">
-            <div className="mb-8 mt-12 max-w-2xl px-6">
+            <div className="mb-8 mt-12 max-w-2xl px-3">
               <h2 className="text-2xl font-bold tracking-tight text-zinc-800 sm:text-4xl dark:text-zinc-100">
                 Find Volunteer Opportunities
               </h2>
