@@ -74,7 +74,7 @@ Card.Description = function CardDescription({
   children: React.ReactNode
 }) {
   return (
-    <p className="relative z-10 text-sm text-zinc-600 dark:text-zinc-400">
+    <p className="relative z-10 text-sm text-zinc-600 dark:text-zinc-400 pt-1">
       {children}
     </p>
   )

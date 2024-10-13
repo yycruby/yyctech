@@ -1,20 +1,39 @@
+'use client'
 import React from 'react'
+import { useTheme } from 'next-themes'
+
 import Image from 'next/image'
 import heroImage from '@/images/photos/calgary_hero.jpg'
 
 export const HeroSection = () => {
+  const { resolvedTheme } = useTheme()
+
   return (
-    <div className="relative mt-[64px] flex w-full overflow-hidden">
-      <Image
+    <div className="relative flex h-[700px] w-full overflow-hidden">
+      {/* <Image
         src={heroImage}
         alt="Hero background"
         fill
         style={{ objectFit: 'cover' }}
         quality={100}
         priority
-      />
-      <div className="absolute inset-0 bg-red-500 opacity-10"></div>
-      <div className="relative z-10 mx-auto flex w-full max-w-[1260px] flex-col px-4 py-32">
+      /> */}
+      <video
+        src={
+          resolvedTheme === 'dark'
+            ? '/assets/video/darkThemeVideo.webm'
+            : '/assets/video/lightThemeVideo.webm'
+        }
+        // controls
+        autoPlay
+        loop
+        muted={true}
+        className="absolute right-[10.5em] -z-10 w-full scale-[123%]"
+      >
+        Your browser does not support the video tag.
+      </video>
+      {/* <div className="absolute inset-0 bg-red-500 opacity-10"></div> */}
+      {/* <div className="relative z-10 mx-auto flex w-full max-w-[1260px] flex-col px-4 py-32">
         <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-5xl">
           Welcome to YYC Tech.
         </h1>
@@ -25,7 +44,7 @@ export const HeroSection = () => {
           thriving communities on platforms like Slack and Discord. Let&apos;s
           build, learn, and grow together!
         </p>
-      </div>
+      </div> */}
     </div>
   )
 }
