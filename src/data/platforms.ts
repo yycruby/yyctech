@@ -129,8 +129,8 @@ export const platforms = [
     meetup: 'https://www.meetup.com/calgaryux',
     description: "The Calgary UX is a community that aims to create a safe and welcoming environment for all attendees. Together, we connect people, celebrate talent and share knowledge.",
     link: {
-      href: 'https://calgaryux.com/',
-      label: 'calgaryux.com/',
+      href: 'https://calgaryux.com',
+      label: 'calgaryux.com',
     },
     logo: '',
     type: '',

@@ -1,50 +1,58 @@
 'use client'
 import React from 'react'
+import Link from 'next/link'
 import { useTheme } from 'next-themes'
-
-import Image from 'next/image'
-import heroImage from '@/images/photos/calgary_hero.jpg'
+import { ReactTyped } from 'react-typed'
 
 export const HeroSection = () => {
   const { resolvedTheme } = useTheme()
 
   return (
-    <div className="relative flex h-[700px] w-full overflow-hidden">
-      {/* <Image
-        src={heroImage}
-        alt="Hero background"
-        fill
-        style={{ objectFit: 'cover' }}
-        quality={100}
-        priority
-      /> */}
+    <div className="relative flex w-full overflow-hidden lg:h-[92vh]">
       <video
         src={
           resolvedTheme === 'dark'
             ? '/assets/video/darkThemeVideo.webm'
             : '/assets/video/lightThemeVideo.webm'
         }
-        // controls
         autoPlay
         loop
         muted={true}
-        className="absolute right-[10.5em] -z-10 w-full scale-[123%]"
+        className={`absolute right-[10.5em] -z-10 w-full scale-[500%] md:scale-[200%] md:border xl:scale-[130%] ${resolvedTheme !== 'dark' ? 'opacity-100' : 'opacity-70'} `}
       >
         Your browser does not support the video tag.
       </video>
-      {/* <div className="absolute inset-0 bg-red-500 opacity-10"></div> */}
-      {/* <div className="relative z-10 mx-auto flex w-full max-w-[1260px] flex-col px-4 py-32">
-        <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-5xl">
-          Welcome to YYC Tech.
+      <div className="relative z-10 mx-4 flex w-full max-w-7xl flex-col justify-end gap-3 pb-20 pt-32 lg:mx-10 lg:py-0 lg:pb-24 xl:mx-auto">
+        <h1 className="max-w-2xl text-5xl md:text-6xl font-medium leading-[1.25em] tracking-tighter text-white lg:text-[6em]">
+          Be part of
         </h1>
-        <p className="text-md mt-6 max-w-2xl text-white text-opacity-80 sm:text-lg">
-          Whether you&apos;re a seasoned developer, tech enthusiast, or someone
-          looking to dive into the world of innovation, you&apos;ve come to the
-          right place. Explore upcoming events, meetups, and connect with
-          thriving communities on platforms like Slack and Discord. Let&apos;s
-          build, learn, and grow together!
+        <ReactTyped
+          strings={[
+            'A Growing Tech Community',
+            'Calgary’s Digital Future',
+            'YYC’s Innovation Hub',
+          ]}
+          typeSpeed={70}
+          backSpeed={20}
+          showCursor={true}
+          cursorChar="|"
+          className="max-w-2xl text-5xl md:text-6xl font-bold leading-[1.25em] tracking-tighter text-red-500 lg:text-[3.5em] lg:leading-10"
+          loop
+        >
+          <span />
+        </ReactTyped>
+
+        <p className="text-md ml-1 mt-6 max-w-2xl text-lg font-medium leading-[1.5em] text-white text-opacity-80 lg:text-xl">
+          Explore events, meetups, and connect with thriving communities.{' '}
+          <br className="hidden md:flex" />
+          Let&apos;s build, ship, and grow together!
         </p>
-      </div> */}
+        <Link href="/newsletter">
+          <button className="mt-2 w-full rounded-full border-white bg-white p-3 font-semibold shadow-lg transition-all duration-300 hover:bg-red-500 hover:text-white lg:mt-4 lg:w-1/6 dark:border dark:bg-transparent dark:hover:bg-white dark:hover:text-black">
+            Sign Up
+          </button>
+        </Link>
+      </div>
     </div>
   )
 }
