@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function Volunteering() {
   return (
-    <div className="space-y-12">
+    <div className="space-y-12 min-h-[400px]">
       <ul
         role="list"
         className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3"

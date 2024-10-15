@@ -45,3 +45,13 @@ pre[class*='language-'] {
 .token.combinator {
   color: theme('colors.zinc.400');
 }
+
+.image-container::before {
+  background: inherit; /* Mirrors the content background */
+  filter: blur(40px); /* Adds the soft glow */
+  z-index: 0;
+  transform: scale(1.2); /* Makes the glow extend beyond the container */
+  pointer-events: none; /* Ensures it doesn't interfere with interactions */
+  border-radius: 12px; /* Match border radius of the container */
+  opacity: 0.8; /* Adjust brightness of the glow */
+}

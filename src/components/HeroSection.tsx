@@ -5,10 +5,10 @@ import { useTheme } from 'next-themes'
 import { ReactTyped } from 'react-typed'
 
 export const HeroSection = () => {
-  const { resolvedTheme } = useTheme()
+  const { resolvedTheme } = useTheme();
 
   return (
-    <div className="relative flex w-full overflow-hidden lg:h-[92vh]">
+    <div className="relative flex w-full overflow-hidden lg:h-[100vh]">
       <video
         src={
           resolvedTheme === 'dark'
@@ -18,11 +18,11 @@ export const HeroSection = () => {
         autoPlay
         loop
         muted={true}
-        className={`absolute right-[10.5em] -z-10 w-full scale-[500%] md:scale-[200%] md:border xl:scale-[130%] ${resolvedTheme !== 'dark' ? 'opacity-100' : 'opacity-70'} `}
+        className={`absolute right-[10.5em] -z-10 w-full scale-[500%] md:scale-[200%] xl:scale-[130%] ${resolvedTheme !== 'dark' ? 'opacity-100' : 'opacity-70'} `}
       >
         Your browser does not support the video tag.
       </video>
-      <div className="relative z-10 mx-4 flex w-full max-w-7xl flex-col justify-end gap-3 pb-20 pt-32 lg:mx-10 lg:py-0 lg:pb-24 xl:mx-auto">
+      <div className="relative z-10 mx-4 flex w-full max-w-7xl flex-col justify-end gap-3 pb-28 pt-32 lg:mx-10 lg:py-0 lg:pb-48 xl:mx-auto">
         <h1 className="max-w-2xl text-5xl md:text-6xl font-medium leading-[1.25em] tracking-tighter text-white lg:text-[6em]">
           Be part of
         </h1>
@@ -36,7 +36,7 @@ export const HeroSection = () => {
           backSpeed={20}
           showCursor={true}
           cursorChar="|"
-          className="max-w-2xl text-5xl md:text-6xl font-bold leading-[1.25em] tracking-tighter text-red-500 lg:text-[3.5em] lg:leading-10"
+          className="max-w-2xl text-5xl md:text-6xl font-bold leading-[1.25em] tracking-tighter text-red-500 text-[2.5em] md:text-[3.5em] lg:leading-10"
           loop
         >
           <span />

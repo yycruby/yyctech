@@ -18,7 +18,7 @@ export default function MobileNav() {
         className="absolute right-0 top-0 w-[80%] rounded-lg bg-white transition-transform duration-200 ease-in-out dark:bg-[#18181b]"
       >
         <AiOutlineClose
-          className="absolute right-4 top-4 z-50 cursor-pointer text-3xl text-red-500 transition-transform duration-200 hover:scale-110"
+          className="absolute right-8 top-8 z-50 cursor-pointer text-3xl text-red-500 transition-transform duration-200 hover:scale-110"
           onClick={() => setIsOpen(false)}
         />
         <ul className="flex flex-col justify-center gap-3 p-10">

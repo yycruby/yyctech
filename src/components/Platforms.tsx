@@ -56,7 +56,7 @@ export default function Platforms() {
           </div>
           <div className="px-4 opacity-60 group-hover:opacity-100">
             <div className='flex w-full items-center gap-1 mt-2'>
-              <h2 className="text-lg font-semibold text-zinc-700 dark:text-zinc-100">
+              <h2 className="text-l mt-3 font-semibold text-zinc-700 dark:text-zinc-100">
                 <Card.Link href={platform.link.href}>{platform.name}</Card.Link>
               </h2>
               {platform.badge && (
