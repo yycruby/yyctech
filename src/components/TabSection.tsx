@@ -69,7 +69,7 @@ export function TabSection() {
           </TabList>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl bg-zinc-50 py-14 dark:bg-zinc-900">
+      <div className="mx-10 xl:mx-auto lg:max-w-7xl bg-zinc-50 py-14 dark:bg-zinc-900">
         <TabPanels>
           <TabPanel className="-mx-2">
             <div className="mb-8 max-w-2xl px-3 pb-10">
